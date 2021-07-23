@@ -1,0 +1,28 @@
+{
+  "name": "higg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild --format=cjs ./src/renderer/preload.ts --outdir=./dist && esbuild ./src/renderer/index.tsx --bundle --sourcemap --outdir=./dist",
+    "watch": "nodemon",
+    "serve": "electron -r esbuild-register ./src/app.ts"
+  },
+  "dependencies": {
+    "@fluentui/react": "^8.22.3",
+    "electron": "^13.1.4",
+    "electron-packager": "^15.2.0",
+    "konva": "^8.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "showdown": "^1.9.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "electron-installer-dmg": "^3.0.0",
+    "esbuild": "^0.12.9",
+    "esbuild-register": "^2.6.0",
+    "nodemon": "^2.0.7"
+  }
+}
